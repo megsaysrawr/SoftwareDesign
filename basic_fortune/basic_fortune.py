@@ -17,16 +17,21 @@ def fortune():
    The fortune selected from the list of possibilities depends on the
    length of the name or string that a user inputs.
    """
-answer = 'y'
+answer = True
 
-while answer is 'y':   
+while answer == True:   
    username = raw_input('What is your name? ')
 #   fortuner = ['you will soon get a big surprise', 'happiness will soon find you', 'things are looking up', 'a wish that you made in the past is about to come true', 'you will be greeted with a gift in the near future', 'the sky will fall on you tomorrow']
-   fortuner = ['Tonight will be legen...wait for it...dary', 'Nothing good every happens after 2am. Remember that tonight.']
+   fortuner = ['Tonight will be legen...wait for it...dary', 'Nothing good every happens after 2am. Remember that tonight.', 'The solution: Watch How I Met Your Mother.', 'If they are THE ONE, don\'t let them go.','Today is a good day to SUIT UP!','Don\'t forget your yellow umbrella.']
 # len is length. This is taking the length of your name and using the remainder
 # function assigning your fortune to a certain element in fortuner
    print fortuner[(len(username)-1)%len(fortuner)]
-   answer = raw_input('Want another fortune? y/n ')
-   print 'That\'s all you get.'
+   answer = raw_input('Want a fortune for someone else? y/n ')
+   if answer == 'y':
+       answer = True
+       print 'Alright!'
+   elif answer == 'n':
+       answer = False
+       print 'Kay, bye!'
    
 fortune()
