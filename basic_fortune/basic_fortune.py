@@ -8,7 +8,7 @@ This python script is a basic program that allows users to introduce themselves 
 
 Students should use this script to get familiar with the Olin College Software Design course Fall 2014 GitHub repository. Each student should add a message and/or some functionality. We will explore how to get past any merge messes that arise.
 
-author = amonmillner
+author = megsaysrawr
 """
 
 def fortune():
@@ -17,8 +17,16 @@ def fortune():
    The fortune selected from the list of possibilities depends on the
    length of the name or string that a user inputs.
    """
-   username = raw_input('what is your name?')
-   fortuner = ['you will soon get a big surprise', 'happiness will soon find you', 'things are looking up', 'a wish that you made in the past is about to come true', 'you will be greeted with a gift in the near future', 'the sky will fall on you tomorrow']
-   print fortuner[(len(username)-1)%len(fortuner)]
+answer = 'y'
 
+while answer is 'y':   
+   username = raw_input('What is your name? ')
+#   fortuner = ['you will soon get a big surprise', 'happiness will soon find you', 'things are looking up', 'a wish that you made in the past is about to come true', 'you will be greeted with a gift in the near future', 'the sky will fall on you tomorrow']
+   fortuner = ['Tonight will be legen...wait for it...dary', 'Nothing good every happens after 2am. Remember that tonight.']
+# len is length. This is taking the length of your name and using the remainder
+# function assigning your fortune to a certain element in fortuner
+   print fortuner[(len(username)-1)%len(fortuner)]
+   answer = raw_input('Want another fortune? y/n ')
+   print 'That\'s all you get.'
+   
 fortune()
