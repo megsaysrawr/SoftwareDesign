@@ -13,4 +13,12 @@ def check_fermat(a,b,c,n):
     else:
         print "No, that doesn't work."
         
-check_fermat(1,2,3,4) #Test case
+# check_fermat(1,2,3,4) #Test case
+
+# Take user input for test cases
+userA = input('Input the a value: ')
+userB = input('Input the b value: ')
+userC = input('Input the c value: ')
+userN = input('Input the n value: ')
+
+check_fermat(userA,userB,userC,userN)
