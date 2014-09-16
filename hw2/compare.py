@@ -1,7 +1,7 @@
 """
 compare.py
 Think Python, Exercise 6.1
-author = megsaysrawr
+author = Meg McCauley
 """
 
 def compare(x,y):

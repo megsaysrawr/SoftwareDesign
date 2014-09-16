@@ -1,7 +1,7 @@
 """
 fermat.py
 Think Python, Exercise 5.3
-author = megsaysrawr
+author = Meg McCauley
 """
 
 def check_fermat(a,b,c,n):
