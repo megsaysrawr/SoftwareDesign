@@ -17,7 +17,7 @@ def fortune():
    The fortune selected from the list of possibilities depends on the
    length of the name or string that a user inputs.
    """
-answer = True
+answer == True
 
 while answer == True:   
    username = raw_input('What is your name? ')
