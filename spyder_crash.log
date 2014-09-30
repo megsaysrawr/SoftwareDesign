@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/spyderlib/spyder.py", line 1920, in main
+    mainwindow = run_spyder(app, options)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/spyder.py", line 1832, in run_spyder
+    main.setup()
+  File "/usr/lib/python2.7/dist-packages/spyderlib/spyder.py", line 616, in setup
+    multithreaded=self.multithreaded)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/plugins/console.py", line 55, in __init__
+    light_background=light_background)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/widgets/internalshell.py", line 93, in __init__
+    debug, profile)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/widgets/shell.py", line 694, in __init__
+    ShellBaseWidget.__init__(self, parent, history_filename, debug, profile)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/widgets/shell.py", line 61, in __init__
+    self.history = self.load_history()
+  File "/usr/lib/python2.7/dist-packages/spyderlib/widgets/shell.py", line 490, in load_history
+    rawhistory, _ = encoding.readlines(self.history_filename)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/utils/encoding.py", line 159, in readlines
+    text, encoding = read(filename, encoding)
+  File "/usr/lib/python2.7/dist-packages/spyderlib/utils/encoding.py", line 151, in read
+    text, encoding = decode( file(filename, 'rb').read() )
+KeyboardInterrupt
