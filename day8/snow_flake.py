@@ -12,19 +12,25 @@ a circle as a regular polygon of a large number of sides.
 """
 from swampy.TurtleWorld import*
 
-def snow_flake_side(turtle, l, level):
-    """ Draw a side of the snowflake curve with side length l and recursion depth of level """
-    world = TurtleWorld()
-    turtle = Turtle()    
-    turtle.delay = 0.1
-    
-    turtle.pen_color = "blue"
-    num_sides = 50
-    side_length = (2*math.pi*radius)/num_sides
-    for i in range (0,num_sides):  
-        meg.fd(radius)
-        meg.rt(360/num_sides)
+world = TurtleWorld()
+turtle = Turtle()
+turtle.delay = 0.1
+turtle.pen_color = "blue"
 
+def snow_flake_side(turtle,length,d):
+    """ Draw a side of the snowflake curve with side length l and recursion depth of level """
+    if d == 1:
+        draw_triangle(turtle,d,length)
+        return
+    else:
+        return snow_flake_side(turtle,1/3*length,d-1)
+        
+def draw_triangle(turtle,d,length):
+    if d == 1:
+        turtle.fd(length)
+    else:
+        drawTriangle(turtle,d-1,length/3)
+        
 snow_flake_side(0,0,10)
 
 #Allows Turtle World to stay open after the script ends
