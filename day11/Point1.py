@@ -7,26 +7,37 @@ Copyright 2012 Allen B. Downey.
 Distributed under the GNU General Public License at gnu.org/licenses/gpl.html.
 
 """
+import math
 
 class Point(object):
     """Represents a point in 2-D space."""
-
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
 
 def print_point(p):
     """Print a Point object in human-readable format."""
     print '(%g, %g)' % (p.x, p.y)
 
-
+def distance_between_points(p1,p2):
+    """Takes two Points as arguments and returns the distance between them."""
+    distance = math.sqrt((p2.x-p1.x)**2+(p2.y-p1.y)**2)
+    return distance
+    
 class Rectangle(object):
     """Represents a rectangle. 
 
     attributes: width, height, corner.
     """
+    def __init__(self,width,height,corner):
+        self.width = width
+        self.height = height
+        self.corner = corner
 
 
 def find_center(rect):
     """Returns a Point at the center of a Rectangle."""
-    p = Point()
+    p = Point(0,0)
     p.x = rect.corner.x + rect.width/2.0
     p.y = rect.corner.y + rect.height/2.0
     return p
@@ -44,9 +55,7 @@ def grow_rectangle(rect, dwidth, dheight):
 
 
 def main():
-    blank = Point()
-    blank.x = 3
-    blank.y = 4
+    blank = Point(3,4)
     print 'blank',
     print_point(blank)
 
@@ -70,4 +79,13 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    point1 = Point(2,6)    
+    point2 = Point(3,5)
+  
+    distance =  distance_between_points(point1,point2)
+    box = Rectangle(10,5,point1)
+        
+    center_point = find_center(box)
+    print '(%g,%g)' % (center_point.x, center_point.y)
+    # print 'The distance between is %f' % distance
+    # %f means turn it into a float and allows you to put the variable names at the end
