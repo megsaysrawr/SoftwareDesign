@@ -11,7 +11,7 @@ from pattern.en import parse
 import pickle
 
 bright = URL('https://www.cs.drexel.edu/~introcs/F2K/placement/bright.txt').download()
-
+walk
 f = open('bright.pickle','w')
 pickle.dump(bright,f)
 f.close()
