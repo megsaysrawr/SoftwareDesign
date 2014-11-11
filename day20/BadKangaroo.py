@@ -31,7 +31,7 @@ class Kangaroo(object):
         """add a new item to the pouch contents"""
         self.pouch_contents.append(item)
 
-kanga = Kangaroo([])
+kanga = Kangaroo([])    # You need to make a NEW list of contents for each object, so it doesn't overwrite contents globally
 roo = Kangaroo([])
 kanga.put_in_pouch('wallet')
 kanga.put_in_pouch('car keys')
