@@ -17,12 +17,16 @@ class BrickBreakerModel:
     """ Encodes the game state """
     def __init__(self, brick_color):
         self.bricks = []
-        for x in range(0,620,100):
-            brick = Brick(brick_color,20,50,x,120)
+        for x in range(10,800,100):
+            brick = Brick(brick_color,20,80,x,100)
             self.bricks.append(brick)
-        #for y in range(0,620,150):
-        #    brick = Brick(brick_color,20,50,200,y)
-        #    self.bricks.append(brick)
+            brick = Brick(brick_color,20,80,x,75)
+            self.bricks.append(brick)
+            brick = Brick(brick_color,20,80,x,50)
+            self.bricks.append(brick)
+            brick = Brick(brick_color,20,80,x,25)
+            self.bricks.append(brick)
+            
         self.paddle = Paddle((255,255,255),20,100,200,450)
 
 class Brick:
@@ -42,6 +46,11 @@ class Paddle:
         self.width = width
         self.x = x
         self.y = y
+        
+class Ball:
+    """Encodes the state of the ball in the game"""
+    def __init__(self,radius):
+        self.radius = radius
             
 class PyGameWindowView:
     """ A view of brick breaker rendered in a Pygame window """
@@ -67,8 +76,10 @@ class PyGameMouseController:
 if __name__ == '__main__':
     pygame.init()
 
-    size = (640,480)
+    size = (700,480)
     screen = pygame.display.set_mode(size)
+    pygame.display.set_caption('Brick Breaker')
+
 
     model = BrickBreakerModel((100,100,250))
     view = PyGameWindowView(model,screen)
